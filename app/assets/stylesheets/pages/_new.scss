@@ -1,9 +1,37 @@
-h1 {
-  color: red;
+h2 {
+  text-align: center;
+  padding: 20px;
+}
+
+.bicycle-form {
+  width: 500px;
+  padding: 10px;
+  margin: 20px auto;
+  border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background: white;
+  border-radius: 2px;
+}
+
+.container {
+  background: #F4F4F4;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  margin: none;
 }
 
 .card {
-  width: 400px;
+  border: none;
   padding: 10px;
+}
 
+.btn.btn-primary {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+form abbr[title] {
+  border-bottom: none !important;
+  text-decoration: none !important;
 }
