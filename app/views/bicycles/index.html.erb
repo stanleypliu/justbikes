@@ -2,6 +2,8 @@
 
 <ul>
   <% @bicycle.each do |bicycle| %>
-    <li><%= bicycle.title %></li>
+    <%= link_to bicycle do  %>
+      <li><%= bicycle.title %></li>
+    <% end %>
   <% end %>
 </ul>
