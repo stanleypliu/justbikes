@@ -27,4 +27,12 @@ class BicyclesController < ApplicationController
   def bicycle_params
     params.require(:bicycle).permit(:location, :style, :price, :size, :title)
   end
+
+  def destroy
+     @bicycle = Bicycle.find(params[:id])
+    @bicycle.destroy
+
+    redirect_to bicycles_path
+  end
+
 end
