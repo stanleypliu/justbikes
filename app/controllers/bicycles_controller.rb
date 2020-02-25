@@ -12,10 +12,8 @@ class BicyclesController < ApplicationController
     end
   end
 
-  private
-
-  def bicycle_params
-    params.require(:bicycle).permit(:location, :style, :price, :size, :title)
+  def show
+    @bicycle = Bicycle.find(params[:id])
   end
 
   def destroy
@@ -25,4 +23,9 @@ class BicyclesController < ApplicationController
     redirect_to bicycles_path
   end
 
+  private
+
+  def bicycle_params
+    params.require(:bicycle).permit(:location, :style, :price, :size, :title)
+  end
 end
