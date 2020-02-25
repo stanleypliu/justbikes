@@ -18,6 +18,10 @@ class BicyclesController < ApplicationController
     params.require(:bicycle).permit(:location, :style, :price, :size, :title)
   end
 
+  def index
+    @bicycle = Bicycle.all
+  end
+
   def destroy
      @bicycle = Bicycle.find(params[:id])
     @bicycle.destroy
