@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# user seeds
+
+
+# bicycle seeds
+10.times do
+  bicycle = Bicycle.new(
+    location: Faker::Nation.capital_city
+    style: Faker::Color.color_name,
+    price: rand(5..20)
+    size: rand("small", "medium", "large")
+    title: Faker::Science.scientist
+  )
+  restaurant.save!
+end
