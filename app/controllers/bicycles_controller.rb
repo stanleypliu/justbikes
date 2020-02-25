@@ -12,6 +12,16 @@ class BicyclesController < ApplicationController
     end
   end
 
+  def edit
+    @bicycle = Bicycle.find(params[:id])
+  end
+
+  def update
+    @bicycle = Bicycle.find(params[:id])
+    @bicycle.update(bicycle_params[:bicycle])
+    redirect_to bicycle_path(@bicycle)
+  end
+
   private
 
   def bicycle_params
