@@ -16,6 +16,10 @@ class BicyclesController < ApplicationController
     end
   end
 
+  def show
+    @bicycle = Bicycle.find(params[:id])
+  end
+
   def destroy
     @bicycle = Bicycle.find(params[:id])
     @bicycle.destroy
@@ -32,6 +36,7 @@ class BicyclesController < ApplicationController
     @bicycle.update(bicycle_params[:bicycle])
     redirect_to bicycle_path(@bicycle)
   end
+
 
   private
 
