@@ -2,13 +2,14 @@ class BicyclesController < ApplicationController
   def index
     @bicycle = Bicycle.all
   end
-  
+
   def new
     @bicycle = Bicycle.new
   end
 
   def create
     @bicycle = Bicycle.new(bicycle_params)
+    @bicycle.user = current_user
     if @bicycle.save
       redirect_to bicycles_path
     else
