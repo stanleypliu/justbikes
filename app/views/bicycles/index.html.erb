@@ -1,51 +1,26 @@
-<style>
-  .bicycle-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .bicycle-card {
-    width: 30%;
-    height: 300px;
-    margin-bottom: 20px;
-  }
-  .bicycle-card-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  @media (max-width: 900px) {
-    .bicycle-card {
-      width: 47%;
-    }
-  }
-  .bottom-bike-card {
-    padding: 10px;
-  }
-  .bike-title {
-    font-weight: bold;
-  }
-</style>
-
-
-
 
 <h1>Bicycles</h1>
 
 <div class="bicycle-container">
   <% @bicycle.each do |bicycle| %>
-    <div class='bicycle-card'>
-      <%= link_to bicycle do %>
-        <%= image_tag "bicycle-avatar.jpg", alt: "alttext", class: "bicycle-card-img" %>
-      <% end %>
-      <div class="bottom-bike-card">
-        <h5 class="bike-title"><%= bicycle.title %></h5>
-        <h5><%= bicycle.style %></h5>
-        <p><%= bicycle.price %></p>
+  <div class='bicycle-card'>
+
+    <%= image_tag "bikez.jpg", alt: "alttext", class: "bicycle-card-img" %>
+    <div class="bottom-bike-card">
+      <h5 class="bike-title"><%= bicycle.title %></h5>
+      <div class="bike-info">
+        <div >
+          <h5><%= bicycle.style.capitalize %></h5>
+          <p>£<%= bicycle.price %> / hour</p>
+        </div>
+        <div class="button">
+          <%= link_to"Book me", bicycle_path(bicycle) %>
+        </div>
       </div>
     </div>
+  </div>
   <% end %>
 </div>
+
 
 
