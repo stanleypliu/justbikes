@@ -1,4 +1,8 @@
 class BicyclesController < ApplicationController
+  def index
+    @bicycle = Bicycle.all
+  end
+  
   def new
     @bicycle = Bicycle.new
   end
@@ -10,6 +14,13 @@ class BicyclesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @bicycle = Bicycle.find(params[:id])
+    @bicycle.destroy
+
+    redirect_to bicycles_path
   end
 
   def edit
@@ -26,13 +37,6 @@ class BicyclesController < ApplicationController
 
   def bicycle_params
     params.require(:bicycle).permit(:location, :style, :price, :size, :title)
-  end
-
-  def destroy
-     @bicycle = Bicycle.find(params[:id])
-    @bicycle.destroy
-
-    redirect_to bicycles_path
   end
 
 end
