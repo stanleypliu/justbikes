@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="bicycle-form">
+    <h2>Post a new review for <%= @bicycle %>:</h2>
+    <div class="card">
+      <%= simple_form_for(@bicycle) do |f| %>
+        <%= f.input :comment %>
+        <%= f.input :rating %>
+        <%= f.submit 'Create posting', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
