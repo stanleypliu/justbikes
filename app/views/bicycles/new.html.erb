@@ -1,0 +1,11 @@
+<h1>Post a new bicycle listing:</h1>
+
+<%= simple_form_for(@bicycle) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :style %>
+  <%= f.input :size %>
+  <%= f.input :price %>
+  <%= f.input :location %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
+
