@@ -12,9 +12,11 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(bookings_params)
     @booking.bicycle = @bicycle
+    @booking.user = current_user
     if @booking.save
-      redirect_to bicycle_booking_path(@booking)
+      redirect_to bicycle_booking_path(@bicycle, @booking)
     else
+      raise
       render :new
     end
   end
