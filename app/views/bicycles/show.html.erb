@@ -1,15 +1,35 @@
 <!-- http://localhost:3000/bicycles/1 -->
-<%= image_tag "tour.jpg", alt: "alttext", class: "banner-img" %>
+<%#= image_tag "bicycle.jpg", alt: "alttext", class: "banner-img" %>
+
+<!-- for the images  -->
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag "tour.jpg", class: 'banner-img' %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "bicycle-avatar.jpg", class: 'banner-img' %>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
 <div class="bicycle-show-flex">
   <div class="lhs-bicycle">
     <div class="bicycle-info">
       <h2 class="bicycle-header"><%= @bicycle.title %></h2>
-      <h3><%= @bicycle.location %></h3>
-      <h3><%= @bicycle.price %></h3>
-      <h3><%= @bicycle.style %></h3>
+      <h4><%= @bicycle.location %></h4>
+      <h4><%= @bicycle.style %></h4>
     </div>
     <div class="bicycle-reviews">
-      <h2>Reviews</h2>
+      <h2 class="review-header">Reviews</h2>
       <ul>
         <% @bicycle.reviews.each do |review| %>
           <p><%= review.comment %> - <%= review.rating %></p>
@@ -17,5 +37,12 @@
       </ul>
     </div>
   </div>
-  <div class="rhs-bicycle"></div>
+  <div class="rhs-bicycle">
+    <div class="reserve-bicycle">
+      <h5>£<%= @bicycle.price %> - per day</h5>
+      <h6>Days</h6>
+      <h6>Total</h6>
+      <a class="btn btn-flat" href="#">Reserve</a>
+    </div>
+  </div>
 </div>
