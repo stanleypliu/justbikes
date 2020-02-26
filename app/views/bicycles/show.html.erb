@@ -28,15 +28,16 @@
       <h4><%= @bicycle.location %></h4>
       <h4><%= @bicycle.style %></h4>
     </div>
-    <div class="card-box-shadow">
+<!-- <<<<<<< HEAD
+    <div class="">
+======= -->
+    <div class="bicycle-reviews d-flex card-box-shadow align-items-start">
       <h2 class="review-header">Reviews</h2>
-      <ul>
-        <% @bicycle.reviews.each do |review| %>
-          <p><%= review.comment %> - <%= review.rating %></p>
-        <% end %>
-      </ul>
+      <%= link_to "leave a review", new_bicycle_review_path(@bicycle), class: "btn btn-dark mr-2" %>
+      <%= link_to "see the reviews", bicycle_reviews_path(@bicycle), class: "btn btn-dark" %>
     </div>
   </div>
+
   <div class="rhs-bicycle">
     <div class="card-box-shadow">
       <h5>£<%= @bicycle.price %> - per day</h5>
