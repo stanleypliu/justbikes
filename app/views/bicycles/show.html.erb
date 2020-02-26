@@ -4,15 +4,18 @@
 <!-- for the images  -->
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= image_tag "tour.jpg", class: 'banner-img' %>
-    </div>
+    <% if @bicycle.photo.attached? %>
+      <div class="carousel-item active">
+      <%= cl_image_tag @bicycle.photo.key, alt: "alttext", class: 'banner-img' %>
+      </div>
+    <% else %>
+      <div class="carousel-item active">
+        <%= image_tag "tour.jpg", class: 'banner-img' %>
+      </div>
+    <% end %>
     <div class="carousel-item">
       <%= image_tag "bicycle-avatar.jpg", class: 'banner-img' %>
     </div>
-<!--     <div class="back-button">
-      <%#= link_to 'Back to results', bicycles_path, class: 'btn btn-flat'  %>
-    </div> -->
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
