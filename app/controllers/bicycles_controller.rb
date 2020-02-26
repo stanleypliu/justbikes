@@ -43,7 +43,7 @@ class BicyclesController < ApplicationController
   private
 
   def bicycle_params
-    params.require(:bicycle).permit(:location, :style, :price, :size, :title)
+    params.require(:bicycle).permit(:location, :style, :price, :size, :title, :photo)
   end
 
 end
