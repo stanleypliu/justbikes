@@ -5,7 +5,7 @@
       <%= simple_form_for([@bicycle, @booking]) do |f| %>
         <%= f.input :start_date, :label => 'Start date'%>
         <%= f.input :end_date, :label => 'End date'%>
-        <%= f.submit 'Create booking', class: 'btn btn-flat' %>
+        <%= f.submit 'Create booking', class: 'btn btn-flat'%>
         <%= link_to 'Go back', bicycle_path(@bicycle), class: 'btn btn-flat'  %>
       <% end %>
     </div>
