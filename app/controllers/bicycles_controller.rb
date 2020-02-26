@@ -12,7 +12,7 @@ class BicyclesController < ApplicationController
     @bicycle = Bicycle.new(bicycle_params)
     @bicycle.user = current_user
     if @bicycle.save
-      redirect_to bicycles_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -26,7 +26,7 @@ class BicyclesController < ApplicationController
     @bicycle = Bicycle.find(params[:id])
     @bicycle.destroy
 
-    redirect_to bicycles_path
+    redirect_to dashboard_path
   end
 
   def edit

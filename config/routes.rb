@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :reviews, only: [:show, :new, :create, :index]
   end
   resources :reviews, only: [:destroy]
+  get "dashboard", to: "users#dashboard", as: :dashboard
 end
