@@ -2,10 +2,10 @@
   <div class="bicycle-form">
     <h2>Post a new review for <%= @bicycle %>:</h2>
     <div class="card">
-      <%= simple_form_for(@bicycle) do |f| %>
+      <%= simple_form_for(@review) do |f| %>
         <%= f.input :comment %>
         <%= f.input :rating %>
-        <%= f.submit 'Create posting', class: 'btn btn-primary' %>
+        <%= f.submit 'Create review', class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
