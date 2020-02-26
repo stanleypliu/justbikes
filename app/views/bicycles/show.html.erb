@@ -42,7 +42,7 @@
       <h5>£<%= @bicycle.price %> - per day</h5>
       <h6>Days</h6>
       <h6>Total</h6>
-      <a class="btn btn-flat" href="#">Reserve</a>
+      <%= link_to 'Reserve', new_bicycle_booking_path(@bicycle), class: "btn btn-flat" %>
     </div>
   </div>
 </div>
