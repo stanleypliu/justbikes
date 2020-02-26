@@ -23,12 +23,12 @@
 
 <div class="bicycle-show-flex">
   <div class="lhs-bicycle">
-    <div class="bicycle-info">
+    <div class="card-box-shadow">
       <h2 class="bicycle-header"><%= @bicycle.title %></h2>
       <h4><%= @bicycle.location %></h4>
       <h4><%= @bicycle.style %></h4>
     </div>
-    <div class="bicycle-reviews">
+    <div class="card-box-shadow">
       <h2 class="review-header">Reviews</h2>
       <ul>
         <% @bicycle.reviews.each do |review| %>
@@ -38,7 +38,7 @@
     </div>
   </div>
   <div class="rhs-bicycle">
-    <div class="reserve-bicycle">
+    <div class="card-box-shadow">
       <h5>£<%= @bicycle.price %> - per day</h5>
       <h6>Days</h6>
       <h6>Total</h6>
