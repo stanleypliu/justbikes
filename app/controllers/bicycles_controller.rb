@@ -1,6 +1,6 @@
 class BicyclesController < ApplicationController
   def index
-    @bicycle = Bicycle.all
+    @bicycle = Bicycle.where.not(user: current_user) # show bicycles user doesnt own
     # @bicycle.select{ |bicycle| } do be worked on tomorrow
   end
 
