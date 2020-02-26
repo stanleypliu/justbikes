@@ -34,6 +34,8 @@ gem 'simple_form'
 gem 'devise'
 # cloudinary thing
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.12.0'
+
 gem 'faker'
 
 group :development, :test do

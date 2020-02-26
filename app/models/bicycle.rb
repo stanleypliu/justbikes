@@ -8,4 +8,5 @@ class Bicycle < ApplicationRecord
   validates :style, presence: true
   validates :location, presence: true
   validates :price, presence: true, numericality: true
+  has_one_attached :photo #for cloudinary
 end
