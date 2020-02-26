@@ -1,9 +1,27 @@
+
 <h1>Bicycles</h1>
 
-<ul>
+<div class="bicycle-container">
   <% @bicycle.each do |bicycle| %>
-    <%= link_to bicycle do  %>
-      <li><%= bicycle.title %></li>
-    <% end %>
+  <div class='bicycle-card'>
+
+    <%= image_tag "bikez.jpg", alt: "alttext", class: "bicycle-card-img" %>
+    <div class="bottom-bike-card">
+      <h5 class="bike-title"><%= bicycle.title %></h5>
+      <div class="bike-info">
+        <div >
+          <h5><%= bicycle.style.capitalize %></h5>
+          <p>£<%= bicycle.price %> / hour</p>
+        </div>
+        <div class="button" type="button">
+          <%= link_to"Book me", bicycle_path(bicycle) %>
+        </div>
+
+      </div>
+    </div>
+  </div>
   <% end %>
-</ul>
+</div>
+
+
+
