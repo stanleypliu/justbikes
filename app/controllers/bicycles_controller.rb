@@ -1,6 +1,7 @@
 class BicyclesController < ApplicationController
   def index
     @bicycle = Bicycle.all
+    # @bicycle.select{ |bicycle| } do be worked on tomorrow
   end
 
   def new

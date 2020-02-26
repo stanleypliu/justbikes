@@ -1,1 +1,40 @@
 // Specific CSS for your home-page
+.container-home{
+  background-image: url("homepage-img.jpg");
+  height: 100vh;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  padding-left: 108px;
+  padding-top: 124px;
+}
+
+.container {
+  background: none;
+}
+
+.search-form {
+  height:360px;
+  width:300px;
+  background-color: white;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2)
+}
+
+.input {
+  width: 100%
+}
+
+.btn-flat {
+  margin-top: 24px;
+}
+
+.label {
+  margin-top: 8px;
+}
+
+h4 {
+  padding: 8px;
+}
