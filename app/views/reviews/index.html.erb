@@ -1,0 +1,8 @@
+<h1>This is all the reviews for <%= @bicycle.title %></h1>
+
+<% if @reviews %>
+	<% @reviews.each do |rev| %>
+	<p>Review from <%= link_to rev.user.name, bicycle_review_path(rev.bicycle, rev) %></p>
+	<br>
+	<% end %>
+<% end %>
