@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="bicycle-form">
+    <h2>Make your booking here</h2>
+    <div class="card">
+      <%= simple_form_for(@booking) do |f| %>
+        <%= f.input :start_date, :label => 'Start date' %>
+        <%= f.input :end_date, :label => 'End date' %>
+        <%= f.submit 'Create booking', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
