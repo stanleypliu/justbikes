@@ -1,0 +1,110 @@
+h1{
+  text-align: center;
+  font-weight:bold;
+   text-decoration: underline overline;
+ }
+.bicycle-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.bicycle-card {
+  width: 30%;
+  height: 300px;
+  margin-bottom: 20px;
+  box-shadow: 20px 20px 50px 15px #eae8e8;
+}
+.bottom-card{
+  display: flex;
+  justify-content: space-between;
+}
+.bike-info{
+  display: flex;
+  justify-content: space-between;
+  // something
+}
+
+
+
+// .button {
+//   padding:10px;
+//   margin-bottom: 25px;
+//   border-radius :25px;
+//   color:black;
+//   position: relative;
+//   background-color: white;
+//   border: none;
+//   border-style: none;
+//   font-size: 18px;
+//   color: white;
+//   text-align: center;
+//   cursor: pointer;
+//   text-decoration: none;
+// }
+
+// .button-text {
+//   text-decoration: none
+// }
+
+// .button{
+//   padding:10px;
+//   margin-bottom: 25px;
+//   border-radius :25px;
+//   color:black;
+//   position: relative;
+//   background-color: #white;
+//   border: none;
+//   font-size: 18px;
+//   color: #white;
+//   text-align: center;
+//   -webkit-transition-duration: 0.4s; /* Safari */
+//   transition-duration: 0.4s;
+//   text-decoration: none;
+//   overflow: hidden;
+//   cursor: pointer;
+// }
+
+// .button:after {
+//   background: red;
+//   display: block;
+//   position: absolute;
+//   padding-top: 300%;
+//   padding-left: 350%;
+//   margin-left: -20px!important;
+//   margin-top: -120%;
+//   opacity: 0;
+//   transition: all 0.8s
+// }
+// .button:active:after {
+//   padding: 0;
+//   margin: 0;
+//   opacity: 1;
+//   transition: 0s
+// }
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+h5
+{
+  color:black
+}
+.bicycle-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+
+}
+@media (max-width: 900px) {
+  .bicycle-card {
+    width: 47%;
+  }
+}
+.bottom-bike-card {
+  padding: 10px;
+}
+.bike-title {
+  font-weight: bold;
+}

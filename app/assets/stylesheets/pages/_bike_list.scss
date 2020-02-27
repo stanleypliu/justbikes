@@ -15,6 +15,22 @@
   top: 0;
 }
 
+
+.button {
+  padding:10px;
+  margin-bottom: 25px;
+  border-radius :25px;
+  color:black;
+  position: relative;
+  background-color: white;
+  border: none;
+  border-style: none;
+  font-size: 18px;
+  color: red;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+
 .bicycle-card {
  display: flex;
  margin: 8px;
@@ -23,6 +39,7 @@
  padding: 8px;
  background-color: white;
 box-shadow: 0 0 8px rgba(0,0,0,0.2)
+
 }
 
 .bicycle-card-img {
