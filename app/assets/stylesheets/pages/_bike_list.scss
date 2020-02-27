@@ -82,8 +82,21 @@ box-shadow: 0 0 8px rgba(0,0,0,0.2)
   align-items: center;
   margin-top:7px;
   justify-content: flex-end;
+  a{
+    height: 35px;
+    background-color: #17bd11;
+    padding: 4px 11px;
+    border-radius:2px;
+    color: white;
+    text-align: center;
+  }
 }
 
-.btn.btn-primary {
+.btn.btn-primary a{
   padding-left:16px;
+  height: 30px;
+}
+
+.booking-btn{
+  width:30%;
 }
