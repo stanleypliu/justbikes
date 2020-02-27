@@ -9,4 +9,6 @@ class Bicycle < ApplicationRecord
   validates :location, presence: true
   validates :price, presence: true, numericality: true
   has_one_attached :photo # for cloudinary
+  geocoded_by :location # location field is geocoding bicycle
+  after_validation :geocode, if: :will_save_change_to_location?
 end

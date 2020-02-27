@@ -1,7 +1,13 @@
 class BicyclesController < ApplicationController
   def index
-    @bicycle = Bicycle.all
+    @bicycle = Bicycle.where.not(user: current_user) # show bicycles user doesnt own
     # @bicycle.select{ |bicycle| } do be worked on tomorrow
+    @markers = Bicycle.geocoded.map do |bicycle|
+      {
+        lat: bicycle.latitude,
+        lng: bicycle.longitude
+      }
+    end
   end
 
   def new
@@ -20,6 +26,12 @@ class BicyclesController < ApplicationController
 
   def show
     @bicycle = Bicycle.find(params[:id])
+    @markers = [
+      {
+        lat: @bicycle.latitude,
+        lng: @bicycle.longitude
+      }
+    ]
   end
 
   def destroy
