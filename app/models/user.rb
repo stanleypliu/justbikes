@@ -11,4 +11,7 @@ class User < ApplicationRecord
   def booked_bicycles
     bicycles.map { |b| b.bookings }.flatten
   end
+
+  def edit
+  end
 end
