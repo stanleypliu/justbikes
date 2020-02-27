@@ -1,4 +1,6 @@
 class BicyclesController < ApplicationController
+    skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     if params[:location].present?
       # search_term = params[:location]
