@@ -9,25 +9,32 @@
 }
 
 .log-in{
-justify-content: center;
-margin-right: 200px;
-margin-left: 200px;
-text-decoration: none;
-border-radius:4px;
-&:hover{
+  justify-content: center;
+  margin-right: 200px;
+  margin-left: 200px;
+  text-decoration: none;
+  border-radius:4px;
+  opacity: 0.3;
+  &:hover{
     color: red;
   }
 }
 
-.sign-up-btn{
-  width: 160px;
+.btn-submit-new{
+  width: 100%;
   padding:5px 20px;
   background: white;
   border-radius: 4px;
   border: solid #ced4da 1px;
   text-decoration: none;
+  color:black;
+  margin-top: 31px;
+  padding:12px;
+
   &:hover{
-    color: red;
+    color:red;
+    opacity: 0.7;
+
   }
 }
 
@@ -50,9 +57,6 @@ border-radius:4px;
   bottom: 360px;
 }
 
-.container {
-  background: none;
-}
 
 .search-form {
   height:360px;
@@ -76,4 +80,37 @@ border-radius:4px;
   margin-top: 8px;
 }
 
+.loginn a {
+  color:black;
+}
+.loginn{
+  margin-bottom:10px;
+  height:100px;
+  display:flex;
+  align-items: space-between;
+  flex-direction:column;
+  margin-top:10px;
 
+}
+.btn-login:hover{
+  color:red;
+  opacity: 0.5;
+}
+
+.text-muted {
+  color: #6c757d !important;
+  margin-left: 5px;
+}
+.background{
+  height:100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1520560501368-3a6e24ccae04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  width:100vw;
+  background-size: cover;
+  background-position: px -600px;
+}
+.p-2{
+  font-family: Georgia, serif;
+  &:hover{
+    color:red;
+  }
+}

@@ -26,3 +26,26 @@
 //   background: #1BCB7F;
 //   color: white;
 // }
+
+.btn-login {
+  padding: 12px;
+}
+.btn-login-new {
+  padding:12px;
+  margin-top:12px;
+  background-color: white;
+  text-align: center;
+  color:black!important;
+
+}
+.btn-login-new a{
+  color:black;
+}
+.btn-login-new:hover{
+  opacity: 0.7;
+}
+.btn-login-new a:hover{
+  color:red!important;
+  text-decoration:none;
+
+}

@@ -8,6 +8,7 @@
     <%= f.input :email,
                 required: true,
                 autofocus: true,
+                label:false,
                 value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
                 input_html: { autocomplete: "email" } %>
   </div>
