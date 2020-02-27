@@ -1,4 +1,6 @@
 class BicyclesController < ApplicationController
+    skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @bicycle = Bicycle.where.not(user: current_user) # show bicycles user doesnt own
     # @bicycle.select{ |bicycle| } do be worked on tomorrow
