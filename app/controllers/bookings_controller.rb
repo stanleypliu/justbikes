@@ -16,7 +16,6 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bicycle_booking_path(@bicycle, @booking)
     else
-      raise
       render :new
     end
   end

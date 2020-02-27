@@ -39,6 +39,9 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'geocoder'
 gem 'faker'
 
+# gem for search
+gem 'pg_search', '~> 2.3.0'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

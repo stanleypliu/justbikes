@@ -1,6 +1,6 @@
 <div class="container">
   <div class="new-form-card">
-    <h2>Post a new bicycle listing:</h2>
+    <h2>Post a bike!</h2>
     <div class="new-form">
       <%= simple_form_for(@bicycle) do |f| %>
         <%= f.input :title %>
@@ -9,7 +9,7 @@
         <%= f.input :price, :label => 'Price (£)' %>
         <%= f.input :photo, as: :file %>
         <%= f.input :location %>
-        <%= f.submit 'Create posting', class: 'btn btn-primary' %>
+        <%= f.submit 'Create posting', class: 'btn btn-flat w-100' %>
       <% end %>
     </div>
   </div>

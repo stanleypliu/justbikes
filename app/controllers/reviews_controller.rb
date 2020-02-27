@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_bicycle
+  before_action :set_bicycle, only: [:index, :show, :new, :create]
 
   def index
   	@reviews = Review.where(bicycle_id: params[:bicycle_id])
@@ -26,9 +26,9 @@ class ReviewsController < ApplicationController
 
   def destroy
   	@review = Review.find(params[:id])
+    bicycle = @review.bicycle
   	@review.destroy
- # 	redirect_to bicycle_reviews_path(@bicycle)
-  	redirect_to bicycles_path
+ 	  redirect_to bicycle_reviews_path(bicycle)
   end
 
   private

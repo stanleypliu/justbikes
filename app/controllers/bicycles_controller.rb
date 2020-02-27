@@ -1,8 +1,23 @@
 class BicyclesController < ApplicationController
+    skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    @bicycle = Bicycle.where.not(user: current_user) # show bicycles user doesnt own
-    # @bicycle.select{ |bicycle| } do be worked on tomorrow
-    @markers = Bicycle.geocoded.map do |bicycle|
+    if params[:location].present?
+      # search_term = params[:location]
+      @bicycles = Bicycle.search_by_location(params[:location])
+
+      if params[:size].present?
+        @bicycles = @bicycles.search_by_size(params[:size])
+      elsif params[:style].present?
+        @bicycles = @bicycles.search_by_style(params[:style])
+      elsif params[:price].present?
+        @bicycles = @bicycles.search_by_price(params[:price])
+      end
+
+    else
+      @bicycles = Bicycle.where.not(user: current_user) # show bicycles user doesnt own
+    end
+    @markers = @bicycles.geocoded.map do |bicycle|
       {
         lat: bicycle.latitude,
         lng: bicycle.longitude
@@ -26,6 +41,7 @@ class BicyclesController < ApplicationController
 
   def show
     @bicycle = Bicycle.find(params[:id])
+    @reviews = @bicycle.reviews
     @markers = [
       {
         lat: @bicycle.latitude,
