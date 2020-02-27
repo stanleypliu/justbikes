@@ -34,13 +34,14 @@
       <h4><%= @bicycle.location %></h4>
       <h4><%= @bicycle.style %></h4>
     </div>
-<!-- <<<<<<< HEAD
-    <div class="">
-======= -->
+
     <div class="bicycle-reviews d-flex card-box-shadow align-items-start">
       <h2 class="review-header">Reviews</h2>
       <%= link_to "leave a review", new_bicycle_review_path(@bicycle), class: "btn btn-dark mr-2" %>
-      <%= link_to "see the reviews", bicycle_reviews_path(@bicycle), class: "btn btn-dark" %>
+      <% @reviews.each do |review| %>
+      <%= review.comment %>
+      <%= review.rating %>
+      <% end %>
     </div>
   </div>
 
@@ -51,10 +52,10 @@
       <h6>Total</h6>
       <%= link_to 'Reserve', new_bicycle_booking_path(@bicycle), class: "btn btn-flat" %>
     </div>
+  <div id="map"
+       style="width: 100%;
+       height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>
-<div id="map"
-     style="width: 100%;
-     height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>

@@ -39,6 +39,7 @@ class BicyclesController < ApplicationController
 
   def show
     @bicycle = Bicycle.find(params[:id])
+    @reviews = @bicycle.reviews
     @markers = [
       {
         lat: @bicycle.latitude,
