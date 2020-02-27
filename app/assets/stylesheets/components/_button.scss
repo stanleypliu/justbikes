@@ -27,18 +27,27 @@
 //   color: white;
 // }
 
-.btn-ghost {
-  color: #DB5156;
-  border: 1px solid #DB5156;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
 
-.btn-ghost:hover {
-  opacity: 1;
+.btn-login {
+  padding: 12px;
+}
+.btn-login-new {
+  padding:12px;
+  margin-top:12px;
+  background-color: white;
+  text-align: center;
+  color:black!important;
+
+}
+.btn-login-new a{
+  color:black;
+}
+.btn-login-new:hover{
+  opacity: 0.7;
+}
+.btn-login-new a:hover{
+  color:red!important;
+  text-decoration:none;
 }
 
 .btn-dark {
