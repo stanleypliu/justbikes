@@ -35,3 +35,45 @@ border-radius:4px;
   display: flex;
   flex-direction: column;
 }
+.container-home{
+  height: 100vh;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  padding-left: 108px;
+  padding-top: 124px;
+}
+
+.logo {
+  position: absolute;
+  left: 160px;
+  bottom: 360px;
+}
+
+.container {
+  background: none;
+}
+
+.search-form {
+  height:360px;
+  width:300px;
+  background-color: white;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2)
+}
+
+.input {
+  width: 100%
+}
+
+.btn-flat {
+  margin-top: 24px;
+}
+
+.label {
+  margin-top: 8px;
+}
+
+

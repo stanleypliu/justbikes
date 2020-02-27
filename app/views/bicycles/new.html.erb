@@ -1,12 +1,13 @@
 <div class="container">
-  <div class="bicycle-form">
+  <div class="new-form-card">
     <h2>Post a new bicycle listing:</h2>
-    <div class="card">
+    <div class="new-form">
       <%= simple_form_for(@bicycle) do |f| %>
         <%= f.input :title %>
         <%= f.input :style %>
         <%= f.input :size %>
         <%= f.input :price, :label => 'Price (£)' %>
+        <%= f.input :photo, as: :file %>
         <%= f.input :location %>
         <%= f.submit 'Create posting', class: 'btn btn-primary' %>
       <% end %>

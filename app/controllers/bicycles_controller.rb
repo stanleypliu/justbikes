@@ -1,6 +1,13 @@
 class BicyclesController < ApplicationController
   def index
-    @bicycle = Bicycle.all
+    @bicycle = Bicycle.where.not(user: current_user) # show bicycles user doesnt own
+    # @bicycle.select{ |bicycle| } do be worked on tomorrow
+    @markers = Bicycle.geocoded.map do |bicycle|
+      {
+        lat: bicycle.latitude,
+        lng: bicycle.longitude
+      }
+    end
   end
 
   def new
@@ -11,7 +18,7 @@ class BicyclesController < ApplicationController
     @bicycle = Bicycle.new(bicycle_params)
     @bicycle.user = current_user
     if @bicycle.save
-      redirect_to bicycles_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -19,13 +26,19 @@ class BicyclesController < ApplicationController
 
   def show
     @bicycle = Bicycle.find(params[:id])
+    @markers = [
+      {
+        lat: @bicycle.latitude,
+        lng: @bicycle.longitude
+      }
+    ]
   end
 
   def destroy
     @bicycle = Bicycle.find(params[:id])
     @bicycle.destroy
 
-    redirect_to bicycles_path
+    redirect_to dashboard_path
   end
 
   def edit
@@ -42,7 +55,7 @@ class BicyclesController < ApplicationController
   private
 
   def bicycle_params
-    params.require(:bicycle).permit(:location, :style, :price, :size, :title)
+    params.require(:bicycle).permit(:location, :style, :price, :size, :title, :photo)
   end
 
 end

@@ -1,27 +1,32 @@
+<div class="page-container">
+  <div class="bicycle-container">
+    <% @bicycle.each do |bicycle| %>
+    <div class='bicycle-card'>
+      <% if bicycle.photo.attached? %>
+        <%= cl_image_tag bicycle.photo.key, alt: "alttext", class: "bicycle-card-img" %>
 
-<h1>Bicycles</h1>
+      <% else %>
+        <%= image_tag "bikez.jpg", alt: "alttext", class: "bicycle-card-img" %>
+      <% end %>
+      <div class="bottom-bike-card">
+        <h5 class="bike-title"><%= bicycle.title %></h5>
+        <div class="bike-info">
+          <div >
+            <h5><%= bicycle.style.capitalize %></h5>
+            <p>£<%= bicycle.price %> / hour</p>
+          </div>
+          <div class="button" type="button">
+            <%= link_to"Book me", bicycle_path(bicycle) %>
+          </div>
 
-<div class="bicycle-container">
-  <% @bicycle.each do |bicycle| %>
-  <div class='bicycle-card'>
-
-    <%= image_tag "bikez.jpg", alt: "alttext", class: "bicycle-card-img" %>
-    <div class="bottom-bike-card">
-      <h5 class="bike-title"><%= bicycle.title %></h5>
-      <div class="bike-info">
-        <div >
-          <h5><%= bicycle.style.capitalize %></h5>
-          <p>£<%= bicycle.price %> / hour</p>
         </div>
-        <div class="button" type="button">
-          <%= link_to"Book me", bicycle_path(bicycle) %>
-        </div>
-
       </div>
     </div>
+    <% end %>
   </div>
-  <% end %>
+  <div id="map"
+       style="width: 30%;
+       height: 100vh;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
-
-
-

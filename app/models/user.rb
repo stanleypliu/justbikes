@@ -4,5 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :bookings
+  has_many :bicycles
   validates :name, presence: true
+  has_one_attached :photo
+
+  def booked_bicycles
+    bicycles.map { |b| b.bookings }.flatten
+  end
 end
