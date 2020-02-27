@@ -1,6 +1,6 @@
-<div class="container-form">
+<div class="container-form"  style="background-image: url(<%= image_path('teal-bike.jpg') %>);">
   <div class="new-form-card">
-    <h2>Make your booking here</h2>
+    <h2>Create your booking here 🚴‍♀️</h2>
     <div class="new-form">
       <%= simple_form_for([@bicycle, @booking]) do |f| %>
         <%= f.input :start_date, :label => 'Start date'%>
