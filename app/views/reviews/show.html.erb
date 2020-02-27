@@ -1,6 +1,11 @@
-<h1>Reviews for <%= @bicycle.title %> from <%= @review.user.name %></h1>
-<%= @review.rating %>
+<h1 class="review-text">Reviews for <%= @bicycle.title %> from <%= @review.user.name %></h1>
+<div class="d-flex justify-content-center">
+	<% @review.rating.times do%>
+		<i class="fas fa-star star-color"></i> 
+	<% end %>
+</div>
+<div class="review-text"><%= @review.comment %></div>
 <br>
-<%= @review.comment %>
-<br>
-<%#= link_to 'delete me', review_path(@review) %>
+
+<%if @review.user == current_user %> <%=  link_to 'delete me', review_path(@review), method: :delete %>
+<% end %>

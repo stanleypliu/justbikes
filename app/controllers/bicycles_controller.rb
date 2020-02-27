@@ -1,4 +1,6 @@
 class BicyclesController < ApplicationController
+    skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     if params[:location].present?
       # search_term = params[:location]
@@ -39,6 +41,7 @@ class BicyclesController < ApplicationController
 
   def show
     @bicycle = Bicycle.find(params[:id])
+    @reviews = @bicycle.reviews
     @markers = [
       {
         lat: @bicycle.latitude,
