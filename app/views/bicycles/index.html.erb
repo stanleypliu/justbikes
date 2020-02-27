@@ -1,6 +1,6 @@
 <div class="page-container">
   <div class="bicycle-container">
-    <% @bicycle.each do |bicycle| %>
+    <% @bicycles.each do |bicycle| %>
     <div class='bicycle-card'>
       <% if bicycle.photo.attached? %>
         <%= cl_image_tag bicycle.photo.key, alt: "alttext", class: "bicycle-card-img" %>

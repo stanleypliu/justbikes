@@ -1,8 +1,12 @@
 class BicyclesController < ApplicationController
   def index
-    @bicycle = Bicycle.where.not(user: current_user) # show bicycles user doesnt own
-    # @bicycle.select{ |bicycle| } do be worked on tomorrow
-    @markers = Bicycle.geocoded.map do |bicycle|
+    if params[:location].present?
+      # @bicycles = Bicycle.search_by_location_and_size(params[:location, :size])
+      @bicycles = Bicycle.search_by_location(params[:location])
+    else
+      @bicycles = Bicycle.where.not(user: current_user) # show bicycles user doesnt own
+    end
+    @markers = @bicycles.geocoded.map do |bicycle|
       {
         lat: bicycle.latitude,
         lng: bicycle.longitude

@@ -11,4 +11,12 @@ class Bicycle < ApplicationRecord
   has_one_attached :photo # for cloudinary
   geocoded_by :location # location field is geocoding bicycle
   after_validation :geocode, if: :will_save_change_to_location?
+
+  include PgSearch::Model
+   # pg_search_scope :search_by_location_and_size,
+   pg_search_scope :search_by_location,
+    against: [:location, :size],
+    using: {
+      tsearch: { prefix: true } # allows matching of even partial terms
+    }
 end

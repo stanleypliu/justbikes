@@ -1,23 +1,33 @@
 <div class="container-home" style="background-image: url(<%= image_path "homepage-img.jpg" %>);">
 <!--   <div class="card-box-shadow"> -->
-    <div class="logo">
-      <%= image_tag 'logo-v3.png', alt: "justbikes-logo" %>
-    </div>
+    <!-- <div class="logo"> -->
+      <%= image_tag 'logo-v3.png', alt: "justbikes-logo", class: 'logo' %>
+<!--     </div> -->
     <div class="search-form">
-            <%#= simple_form_for(@bicycle) do |f| %>
-            <%#= f.input :location %>
-            <%#= f.input :start_date %>
-            <%#= f.input :end_date %>
-            <%#= f.submit 'Search', class: 'btn-flat' %>
-            <%# end %>
         <h4>Search through thousands of bikes </h4>
-        <label for="location">Location</label>
+
+<!--         <label for="location">Location</label>
         <input class="input" type="text">
-        <label for="start_date">Rent</label>
+        <label for="start_date">Start date</label>
         <input class="input" type="text">
-        <label for="start_date">Return</label>
+        <label for="start_date">End date</label>
         <input class="input" type="text">
-        <input type="submit" class="btn-flat">
+        <input type="submit" class="btn-flat"> -->
+        <%= form_tag bicycles_path, method: :get do %>
+          <label for="location">Location</label>
+          <%= text_field_tag :location,
+            params[:location],
+            class: "form-control",
+            placeholder: "Location", required: true
+          %>
+          <label for="size">Size (optional)</label>
+          <%= text_field_tag :size,
+            params[:size],
+            class: "form-control",
+            placeholder: "Size"
+          %>
+        <%= submit_tag "Search for your ideal bike", class: "btn btn-flat"%>
+      <% end %>
     </div>
 <!--   </div> -->
 </div>
