@@ -1,7 +1,10 @@
 <div class="page-container">
-
     <div class="lhs-index-page">
+       <% if @bicycles.empty? %>
+        <h1>No results found!</h1>
+          <% end %>
         <% @bicycle.each do |bicycle| %>
+      
         <div class='bicycle-card'>
             <% if bicycle.photo.attached? %>
               <%= cl_image_tag bicycle.photo.key, alt: "alttext", class: "bicycle-card-img" %>
