@@ -1,7 +1,7 @@
 <div class="container-home" style="background-image: url(<%= image_path "homepage-img.jpg" %>);">
 <!--   <div class="card-box-shadow"> -->
     <!-- <div class="logo"> -->
-      <%= image_tag 'logo-v3.png', alt: "justbikes-logo", class: 'logo' %>
+
 <!--     </div> -->
     <div class="search-form">
         <h4>Search through thousands of bikes </h4>
@@ -25,6 +25,18 @@
             params[:size],
             class: "form-control",
             placeholder: "Size"
+          %>
+          <label for="style">Style (optional)</label>
+          <%= text_field_tag :style,
+            params[:style],
+            class: "form-control",
+            placeholder: "Style"
+          %>
+          <label for="price">Price (optional)</label>
+          <%= text_field_tag :price,
+            params[:price],
+            class: "form-control",
+            placeholder: "Price"
           %>
         <%= submit_tag "Search for your ideal bike", class: "btn btn-flat"%>
       <% end %>

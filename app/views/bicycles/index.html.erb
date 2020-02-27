@@ -1,5 +1,8 @@
 <div class="page-container">
   <div class="bicycle-container">
+    <% if @bicycles.empty? %>
+      <h1>No results found!</h1>
+    <% end %>
     <% @bicycles.each do |bicycle| %>
     <div class='bicycle-card'>
       <% if bicycle.photo.attached? %>

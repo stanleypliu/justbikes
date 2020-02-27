@@ -1,8 +1,17 @@
 class BicyclesController < ApplicationController
   def index
     if params[:location].present?
-      # @bicycles = Bicycle.search_by_location_and_size(params[:location, :size])
+      # search_term = params[:location]
       @bicycles = Bicycle.search_by_location(params[:location])
+
+      if params[:size].present?
+        @bicycles = @bicycles.search_by_size(params[:size])
+      elsif params[:style].present?
+        @bicycles = @bicycles.search_by_style(params[:style])
+      elsif params[:price].present?
+        @bicycles = @bicycles.search_by_price(params[:price])
+      end
+
     else
       @bicycles = Bicycle.where.not(user: current_user) # show bicycles user doesnt own
     end
