@@ -1,1 +1,37 @@
 // Specific CSS for your home-page
+.form-check-input, .form-check-label {
+  color:black!important;
+}
+
+.form-actions {
+  width: 100%;
+  display: flex;
+}
+
+.log-in{
+justify-content: center;
+margin-right: 200px;
+margin-left: 200px;
+text-decoration: none;
+border-radius:4px;
+&:hover{
+    color: red;
+  }
+}
+
+.sign-up-btn{
+  width: 160px;
+  padding:5px 20px;
+  background: white;
+  border-radius: 4px;
+  border: solid #ced4da 1px;
+  text-decoration: none;
+  &:hover{
+    color: red;
+  }
+}
+
+.btn-links{
+  display: flex;
+  flex-direction: column;
+}
