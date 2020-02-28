@@ -20,7 +20,9 @@ class BicyclesController < ApplicationController
     @markers = @bicycles.geocoded.map do |bicycle|
       {
         lat: bicycle.latitude,
-        lng: bicycle.longitude
+        lng: bicycle.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { bicycle: bicycle }),
+        # image_url: helpers.asset_url('')
       }
     end
   end
