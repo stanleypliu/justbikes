@@ -1,29 +1,37 @@
 <div class="page-container">
     <div class="lhs-index-page">
-       <% if @bicycles.empty? %>
-        <h1>No results found!</h1>
-          <% end %>
-        <% @bicycles.each do |bicycle| %>
-
-        <div class='bicycle-card'>
-            <% if bicycle.photo.attached? %>
-              <%= cl_image_tag bicycle.photo.key, alt: "alttext", class: "bicycle-card-img" %>
-            <% else %>
-              <%= image_tag "bikez.jpg", alt: "alttext", class: "bicycle-card-img" %>
-            <% end %>
-            <div class="bottom-bicycle-card">
-              <div class="bicycle-info">
-                <p class="subtext"><%= bicycle.style.capitalize %></p>
-                <p class="bicycle-title"><%= bicycle.title %></p>
-                <p class="subtext"><%= bicycle.location %></p>
-                <p class="subtext">£<%= bicycle.price %> / day</p>
+      <% if @bicycles.empty? %>
+        <div class="no-results" style="background-image: linear-gradient(187deg, rgba(180,58,122,0.3) 0%, rgba(108,204,184,0.3) 25%, rgba(233,70,0,0.3) 50%), url(<%= image_path('broken-bike.jpg') %>);">
+          <div class="no-results-message">
+            <h1>No results found! 😧</h1>
+            <%#= image_tag 'broken-bike', alt: "Broken bike :(", class: 'broken-bike' %>
+            <div class="go-back-button">
+              <%= link_to "Go back", root_path%>
             </div>
-            <div class="bicycle-info-button ">
-               <%= link_to "Book me", bicycle_path(bicycle)%>
-             </div>
-            <%= link_to "", bicycle_path(bicycle), class: "stretched-link"%>
-            </div>
+          </div>
         </div>
+      <% end %>
+      <% @bicycles.each do |bicycle| %>
+
+      <div class='bicycle-card'>
+          <% if bicycle.photo.attached? %>
+            <%= cl_image_tag bicycle.photo.key, alt: "alttext", class: "bicycle-card-img" %>
+          <% else %>
+            <%= image_tag "bikez.jpg", alt: "alttext", class: "bicycle-card-img" %>
+          <% end %>
+          <div class="bottom-bicycle-card">
+            <div class="bicycle-info">
+              <p class="subtext"><%= bicycle.style.capitalize %></p>
+              <p class="bicycle-title"><%= bicycle.title %></p>
+              <p class="subtext"><%= bicycle.location %></p>
+              <p class="subtext">£<%= bicycle.price %> / day</p>
+          </div>
+          <div class="bicycle-info-button ">
+             <%= link_to "Book me", bicycle_path(bicycle)%>
+           </div>
+          <%= link_to "", bicycle_path(bicycle), class: "stretched-link"%>
+          </div>
+      </div>
       <% end %>
     </div>
 
