@@ -1,0 +1,57 @@
+.background{
+  height:100vh;
+  padding-top: 64px;
+  width:100vw;
+  background-size: cover;
+  background-position: px -600px;
+}
+
+.login-card-box {
+  background-color: white;
+  padding: 24px;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  height: 400px;
+  width:400px;
+}
+
+.p-2 {
+  margin: 30px;
+}
+
+.text-muted {
+  color: #6c757d !important;
+  margin-left: 5px;
+}
+
+.form-inputs {
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-inputs input{
+  width:300px;
+}
+.form-inputs1 {
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-inputs1 input{
+  width:300px;
+}
+
+.btn-login:hover {
+  color:#DB5157;
+  opacity: 0.5;
+}
+
+.btn-login-new:hover {
+  color:white;
+  opacity: 0.5;
+}
