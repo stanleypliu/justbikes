@@ -42,7 +42,6 @@
   cursor: pointer;
   text-decoration: none;
 }
-
 .bicycle-card {
  display: flex;
  margin: 8px;
@@ -86,10 +85,10 @@
   margin:0px;
 }
 
-.btn.btn-info {
+.btn .btn-info {
   width:90%;
   margin-top: 32px;
-    padding-left: 16px;
+  padding-left: 16px;
 }
 
 .bicycle-info-button {

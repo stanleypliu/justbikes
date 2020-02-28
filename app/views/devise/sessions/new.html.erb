@@ -4,7 +4,7 @@
 
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
+    <div class="form-inputs1">
       <%= f.input :email,
                   required: false,
                   autofocus: true,
@@ -20,13 +20,10 @@
     </div>
 
 
-    <div class="form-actions">
+    <div class="login-container">
       <%= f.button :submit, "Log in", class: "btn-login" %>
     </div>
   <% end %>
 
-  <div class= "loginn">
-    <%#= render "devise/shared/links" %>
-  </div>
 </div>
 </div>
