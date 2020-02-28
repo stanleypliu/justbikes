@@ -1,0 +1,23 @@
+.show-container {
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  height: 100vh;
+}
+
+.booking-confirm-div {
+  height:350px;
+  width: 350px;
+  background-color: white;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 2px;
+  margin-left:32px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.booking-confirm-info {
+  padding: 16px;
+  text-align:center;
+}

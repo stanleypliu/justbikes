@@ -1,5 +1,9 @@
-<div class="container text-center">
-  <h1>Amazing your booking is confirmed 🎉</h1>
-<h3><%= @booking.start_date %> to <%= @booking.end_date %></h3>
-<%= link_to "Back home", root_path  %>
+<div class="show-container" style="background-image:  linear-gradient(187deg, rgba(180,58,122,0.3) 0%, rgba(108,204,184,0.3) 25%, rgba(233,70,0,0.3) 50%), url(<%= image_path "bookingbike.jpg" %>");>
+  <div class="booking-confirm-div">
+    <div class="booking-confirm-info">
+        <h2 class="booking-greeting"> <%= current_user.name.capitalize %>, your booking is confirmed! 🎉</h2>
+          <p>You've booked <strong><%= @bicycle.title.capitalize %></strong>  from <%= @booking.start_date %> to <%= @booking.end_date %></p>
+        <%= link_to "Back to home", root_path  %>
+    </div>
+  </div>
 </div>
