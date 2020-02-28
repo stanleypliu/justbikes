@@ -1,11 +1,17 @@
-<h1 class="review-text">Reviews for <%= @bicycle.title %> from <%= @review.user.name %></h1>
-<div class="d-flex justify-content-center">
-	<% @review.rating.times do%>
-		<i class="fas fa-star star-color"></i> 
-	<% end %>
-</div>
-<div class="review-text"><%= @review.comment %></div>
-<br>
+<div class="show-container" style="background-image:  linear-gradient(187deg, rgba(180,58,122,0.3) 0%, rgba(108,204,184,0.3) 25%, rgba(233,70,0,0.3) 50%), url(<%= image_path "bookingbike.jpg" %>); ">
+  <div class="booking-confirm-div" style="height: 500px;">
+    <div class="booking-confirm-info">
+        <h1 class="review-text">Review posted for <%= @bicycle.title %>!</h1>
+        <div class="d-flex justify-content-start">
+          <% @review.rating.times do%>
+          <div style="padding-right: 15px;"><i class="fas fa-star star-color"></i></div>
+          <% end %> - <div style="padding-left: 20px"><%= @review.comment %></div>
+        </div>
+        <hr>
 
-<%if @review.user == current_user %> <%=  link_to 'delete me', review_path(@review), method: :delete %>
-<% end %>
+        <h2>Changed your mind?</h2>
+        <%if @review.user == current_user %>
+          <%=  link_to 'Delete Me', review_path(@review), method: :delete, class: 'btn btn-flat', style: "margin-top: 0px;" %>
+        <% end %>
+    </div>
+  </div>
