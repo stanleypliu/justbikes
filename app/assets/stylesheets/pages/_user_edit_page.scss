@@ -1,0 +1,33 @@
+.edit-user-div {
+  background-color: white;
+  padding: 16px;
+  width: 500px;
+  margin: 16px auto;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.cancel-div {
+  background-color: white;
+  justify-content: center;
+  height: 100px;
+  width: 500px;
+  padding: 16px;
+  text-align: center;
+  margin: 16px auto;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.edit-user-container {
+ height: 100vh;
+}
+
+.form-inputs {
+  width: 400px;
+  margin-left: 42px;
+}
+
+.form-actions {
+  // margin-left:100px;
+}
