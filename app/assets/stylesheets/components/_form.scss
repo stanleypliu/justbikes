@@ -39,5 +39,10 @@ form abbr[title] {
 .form-inputs {
   width: 400px;
 }
+.form-inputs-edit{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 
