@@ -9,12 +9,10 @@
   margin-top: 100px;
 }
 .form-actions1{
-
   display: flex;
   margin-top: 100px;
 
 }
-
 
 .btn-links{
   display: flex;
@@ -28,8 +26,6 @@
   padding-left: 108px;
   padding-top: 60px;
 }
-
-
 
 label {
   margin-top: 10px;
@@ -56,51 +52,3 @@ label {
 .label {
   margin-top: 8px;
 }
-
-.btn-login:hover {
-  color:white;
-  opacity: 0.5;
-}
-
-.btn-login-new:hover {
-  color:white;
-  opacity: 0.5;
-}
-.text-muted {
-  color: #6c757d !important;
-  margin-left: 5px;
-}
-.background{
-  height:100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1520560501368-3a6e24ccae04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-  width:100vw;
-  background-size: cover;
-  background-position: px -600px;
-}
-.p-2{
-  font-family: Georgia, serif;
-  &:hover{
-    color:red;
-  }
-}
-.form-inputs {
-  width: 100%;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.form-inputs input{
-  width:300px;
-}
-.form-inputs1 {
-  width: 100%;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.form-inputs1 input{
-  width:300px;
-}
-
