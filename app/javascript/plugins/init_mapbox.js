@@ -19,14 +19,32 @@ const initMapbox = () => {
 
     const markers = JSON.parse(mapElement.dataset.markers);
 
+    // const popup = ; // add this
+
     markers.forEach((marker) => {
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
+        // .setPopup(new mapboxgl.Popup())
+        // .setHTML(marker.infoWindow.content)
         .addTo(map);
     });
 
+    const addMarkersToMap = (map, markers) => {
+      markers.forEach((marker) => {
+        const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+
+        new mapboxgl.Marker()
+          .setLngLat([ marker.lng, marker.lat ])
+          .setPopup(popup) // add this
+          .addTo(map);
+      });
+    };
+
     fitMapToMarkers(map, markers);
+    addMarkersToMap(map, markers);
   }
+
 };
+
 
 export { initMapbox };
