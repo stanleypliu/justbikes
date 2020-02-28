@@ -1,4 +1,4 @@
-<h1>Hello, <%= current_user.name.capitalize %>! 😃</h1>
+<h1 class="user-greeting">Hello, <%= current_user.name.capitalize %>! 😃</h1>
 
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -9,12 +9,12 @@
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My Bookings</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Bikes I'm renting</a>
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">My Booked Bikes</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <%= link_to "add bike", new_bicycle_path %>
+    <%= link_to "Add a bike", new_bicycle_path, class: 'btn btn-primary' %>
     <div class="bicycle-container">
       <% @bicycles.each do |bicycle| %>
         <div class='bicycle-card'>
@@ -25,11 +25,11 @@
             <%= image_tag "bikez.jpg", alt: "alttext", class: "bicycle-card-img" %>
           <% end %>
           <div class="bottom-bike-card">
-            <h5 class="bike-title"><%= bicycle.title %></h5>
+            <h5 class="bike-title"><%= bicycle.title.capitalize %></h5>
             <div class="bike-info">
               <div >
                 <h5><%= bicycle.style.capitalize %></h5>
-                <p>£<%= bicycle.price %> / hour</p>
+                <p>£<%= bicycle.price %> / day</p>
               </div>
             </div>
           </div>
@@ -51,8 +51,8 @@
             <h5 class="bike-title"><%= booking.bicycle.title %></h5>
             <div class="bike-info">
               <div >
-                <h5><%= booking.start_date.strftime('%d/%m/%y') %> to <%= booking.end_date.strftime('%d/%m/%y') %></h5>
-                <p><%= booking.total_price %></p>
+                <h5>From <%= booking.start_date.strftime('%d/%m/%y') %> to <%= booking.end_date.strftime('%d/%m/%y') %></h5>
+                <p>Booking total: £<%= booking.total_price %></p>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@
     </div>
   </div>
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-    <h2>Bookings for my bikes other people have made</h2>
+    <h2>People have booked your bikes!</h2>
     <div class="bicycle-container">
       <% @bicycle_bookings.each do |booking| %>
         <div class='bicycle-card'>
@@ -72,11 +72,11 @@
             <%= image_tag "bikez.jpg", alt: "alttext", class: "bicycle-card-img" %>
           <% end %>
           <div class="bottom-bike-card">
-            <h5 class="bike-title"><%= booking.bicycle.title %></h5>
+            <h5 class="bike-title"><%= booking.bicycle.title.capitalize %></h5>
             <div class="bike-info">
               <div >
-                <h5><%= booking.start_date.strftime('%d/%m/%y') %> to <%= booking.end_date.strftime('%d/%m/%y') %></h5>
-                <p><%= booking.total_price %></p>
+                <h5>From <%= booking.start_date.strftime('%d/%m/%y') %> to <%= booking.end_date.strftime('%d/%m/%y') %></h5>
+                <p>Booking invoice: £<%= booking.total_price %></p>
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@
   <div class="booking-confirm-div">
     <div class="booking-confirm-info">
         <h2 class="booking-greeting"> <%= current_user.name.capitalize %>, your booking is confirmed! 🎉</h2>
-          <p>You've booked <strong><%= @bicycle.title.capitalize %></strong>  from <%= @booking.start_date %> to <%= @booking.end_date %></p>
+          <p>You've booked <strong><%= @bicycle.title.capitalize %></strong>  from <%= @booking.start_date %> to <%= @booking.end_date %> and it will cost you <strong><%= @booking.total_price %></strong> units of local currency.</p>
         <%= link_to "Back to home", root_path  %>
     </div>
   </div>
