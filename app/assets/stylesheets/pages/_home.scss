@@ -4,39 +4,11 @@
 }
 
 .form-actions {
-  width: 100%;
+  width: 300px;
   display: flex;
+  margin-top: 100px;
 }
 
-.log-in{
-  justify-content: center;
-  margin-right: 200px;
-  margin-left: 200px;
-  text-decoration: none;
-  border-radius:4px;
-  opacity: 0.3;
-  &:hover{
-    color: red;
-  }
-}
-
-.btn-submit-new{
-  width: 100%;
-  padding:5px 20px;
-  background: white;
-  border-radius: 4px;
-  border: solid #ced4da 1px;
-  text-decoration: none;
-  color:black;
-  margin-top: 31px;
-  padding:12px;
-
-  &:hover{
-    color:red;
-    opacity: 0.7;
-
-  }
-}
 
 .btn-links{
   display: flex;
@@ -74,23 +46,15 @@
   margin-top: 8px;
 }
 
-.loginn a {
-  color:black;
-}
-.loginn{
-  margin-bottom:10px;
-  height:100px;
-  display:flex;
-  align-items: space-between;
-  flex-direction:column;
-  margin-top:10px;
-
-}
-.btn-login:hover{
-  color:red;
+.btn-login:hover {
+  color:white;
   opacity: 0.5;
 }
 
+.btn-login-new:hover {
+  color:white;
+  opacity: 0.5;
+}
 .text-muted {
   color: #6c757d !important;
   margin-left: 5px;
@@ -107,4 +71,14 @@
   &:hover{
     color:red;
   }
+}
+.form-inputs {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-inputs input{
+  width:300px;
 }
