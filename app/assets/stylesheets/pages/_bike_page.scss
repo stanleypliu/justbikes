@@ -15,6 +15,11 @@
 #map {
 border-radius: 2px;
 }
+
+.reviews-title-bar {
+	display: flex;
+	justify-content: space-between;
+}
 // .carousel-inner {
 //   position: relative;
 // }
@@ -24,3 +29,7 @@ border-radius: 2px;
 //   top: -15px;
 //   left: 50%;
 // }
+.reviews {
+
+	padding-left: 20px;
+}

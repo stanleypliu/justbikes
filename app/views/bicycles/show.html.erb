@@ -31,30 +31,37 @@
   <div class="lhs-bicycle">
     <div class="card-box-shadow">
       <h2 class="bicycle-header"><%= @bicycle.title %></h2>
-      <h4><%= @bicycle.location %></h4>
-      <h4><%= @bicycle.style %></h4>
+      <h4>This leg powered device lives in <%= @bicycle.location %>.</h4>
+      <h4>This is a <%= @bicycle.style %> bicycle.</h4>
     </div>
 
-    <div class="bicycle-reviews d-flex card-box-shadow align-items-start">
-      <h2 class="review-header">Reviews</h2>
-      <%= link_to "leave a review", new_bicycle_review_path(@bicycle), class: "btn btn-dark mr-2" %>
-      <% @reviews.each do |review| %>
-      <%= review.comment %>
-      <%= review.rating %>
+    <div class="bicycle-reviews card-box-shadow align-items-start">
+      <div class="reviews-title-bar">
+        <h2 class="review-header">Reviews</h2>
+        <%= link_to "Leave a review", new_bicycle_review_path(@bicycle), class: "btn btn-dark" %>
+      </div>
+      <div class="reviews">
+        <% @reviews.each do |review| %>
+        <% review.rating.times do%>
+        <i class="fas fa-star star-color"></i> 
+        <% end %>
+        <br>
+        <%= review.comment %>
+        <br>
+        <br>
       <% end %>
+      </div>
     </div>
   </div>
 
   <div class="rhs-bicycle">
     <div class="card-box-shadow">
-      <h5>£<%= @bicycle.price %> - per day</h5>
-      <h6>Days</h6>
-      <h6>Total</h6>
+      <h5>£<%= @bicycle.price %> / per day</h5>
       <%= link_to 'Reserve', new_bicycle_booking_path(@bicycle), class: "btn btn-flat" %>
     </div>
   <div id="map"
        style="width: 100%;
-       height: 600px;"
+       height: 500px;"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>

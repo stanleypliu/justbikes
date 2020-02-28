@@ -1,14 +1,12 @@
-<div class="container-form">
+<div class="container-form"  style="background-image: linear-gradient(187deg, rgba(180,58,122,0.3) 0%, rgba(108,204,184,0.3) 25%, rgba(233,70,0,0.3) 50%), url(<%= image_path('teal-bike.jpg') %>);">
   <div class="new-form-card">
-    <h2>Make your booking here</h2>
+    <h2>Create your booking here 🚴‍♀️</h2>
     <div class="new-form">
       <%= simple_form_for([@bicycle, @booking]) do |f| %>
         <%= f.input :start_date, :label => 'Start date'%>
         <%= f.input :end_date, :label => 'End date'%>
         <%= f.submit 'Create booking', class: 'btn btn-flat'%>
-        <%= link_to 'Go back', bicycle_path(@bicycle), class: 'btn btn-flat'  %>
       <% end %>
     </div>
-
   </div>
 </div>

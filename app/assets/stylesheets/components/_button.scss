@@ -11,6 +11,7 @@
   background: #FF7278;
   color: white;
 }
+
 .login-container{
   display: flex;
   justify-content: center;
@@ -25,6 +26,7 @@
   margin-top:27px;
   content-align: center;
 }
+
 .btn-login-new {
   position: relative;
   width:33%;
@@ -48,4 +50,20 @@
   border-radius: 6px;
   border: 0.4px solid white;
   margin-top:27px;
+}
+
+.btn-login-new:hover{
+  opacity: 0.7;
+}
+
+.btn-login-new a:hover{
+  color:red!important;
+  text-decoration:none;
+}
+
+.btn-dark {
+  height: 50%;
+  margin-top: 15px;
+  width: 160px;
+
 }
